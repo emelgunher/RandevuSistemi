@@ -1,0 +1,37 @@
+﻿.body {
+    /*background-image: url('../img/1856252.jpg');*/
+    /*background-image: url('../img/2579724.jpg');*/
+    background-image: url('../img/2579635.jpg');
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+
+}
+.bosluk{
+    padding-top: 130px;
+}
+.header {
+    /*padding-left: -30px;
+    padding-right: -30px;*/
+    background-color: white;
+    border-radius: 8px;
+}
+.button {
+    background-color: white;
+    color: black;
+    border: #555555; /*black*/
+    transition-duration: 0.4s;
+    padding: 13px 80px;
+    border-radius: 4px;
+}
+    .button:hover {
+        background-color: #4CAF50; /* Green */
+        color: white;
+    }
+
+    .button:focus {
+        background-color: #4CAF50; /* Green */
+        color: white;
+    }
