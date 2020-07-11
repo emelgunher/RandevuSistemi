@@ -97,10 +97,20 @@
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\form.css" />
     <Content Include="Content\css\layout.css" />
-    <Content Include="Content\img\1856252.jpg" />
-    <Content Include="Content\img\2579635.jpg" />
-    <Content Include="Content\img\2579724.jpg" />
+    <Content Include="Content\img\background\1856252.jpg" />
+    <Content Include="Content\img\background\2579635.jpg" />
+    <Content Include="Content\img\background\2579724.jpg" />
+    <Content Include="Content\img\icon\camera-icon.png" />
+    <Content Include="Content\img\icon\company-icon.png" />
+    <Content Include="Content\img\icon\email-icon.png" />
+    <Content Include="Content\img\icon\instagram-icon.png" />
+    <Content Include="Content\img\icon\password-icon.png" />
+    <Content Include="Content\img\icon\phone-icon.png" />
+    <Content Include="Content\img\icon\telephone-icon.png" />
+    <Content Include="Content\img\icon\user-icon.png" />
+    <Content Include="Content\img\icon\website-icon.png" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\js\bootstrap.bundle.js" />
     <Content Include="Scripts\js\bootstrap.bundle.min.js" />
@@ -228,6 +238,7 @@
     <Content Include="Scripts\js\jquery-3.5.1.slim.min.map" />
     <Content Include="Scripts\js\jquery-3.5.1.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\KayitOl.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -13,5 +13,10 @@ namespace RandevuSistemi.Controllers
         {
             return View();
         }
+
+        public ActionResult KayitOl()
+        {
+            return View();
+        }
     }
 }

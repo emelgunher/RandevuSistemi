@@ -1,13 +1,10 @@
 ﻿.body {
-    /*background-image: url('../img/1856252.jpg');*/
-    /*background-image: url('../img/2579724.jpg');*/
-    background-image: url('../img/2579635.jpg');
+    background-image: url('../img/background/2579635.jpg');
     background-color: #cccccc;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-
 }
 .bosluk{
     padding-top: 130px;

@@ -1,0 +1,107 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+/* Style the input container */
+.input {
+    display: flex;
+    border: none;
+    border-bottom: 1px solid gray;
+    width: 500px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+    .input:focus {
+        border: 2px solid lightblue;
+    }
+
+.input-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+    .input-container:focus {
+        border: 2px solid lightblue;
+    }
+
+.input-instagram {
+    display: flex;
+    width: 2500px;
+    height: 45px;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+    .input-instagram:focus {
+        border: 2px solid lightblue;
+    }
+
+.input-camera {
+    width: 5000px;
+    height: 45px;
+    outline: none;
+}
+
+    .input-camera:focus {
+        border: 2px solid lightblue;
+    }
+
+/* Style the input fields */
+.input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+
+    .input-field:focus {
+        border: 2px solid lightblue;
+    }
+
+
+
+/* Style the form icons */
+.icon {
+    padding: 10px;
+    background: white;
+    color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.icon-company {
+    padding: 10px;
+    background: white;
+    color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+
+.icon-camera {
+    width: 160px;
+    height: 160px;
+}
+
+
+/* Set a style for the submit button */
+.buton {
+    height: 45px;
+    text-align: center;
+}
+
+.btn {
+    background-color: dodgerblue;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+    .btn:hover {
+        opacity: 1;
+    }
