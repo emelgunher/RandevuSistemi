@@ -101,6 +101,7 @@
     <Content Include="Content\css\hizmet-ekle.css" />
     <Content Include="Content\css\layout.css" />
     <Content Include="Content\css\layout1.css" />
+    <Content Include="Content\css\odeme-ayarlari.css" />
     <Content Include="Content\img\background\1856252.jpg" />
     <Content Include="Content\img\background\2579635.jpg" />
     <Content Include="Content\img\background\2579724.jpg" />
@@ -113,6 +114,7 @@
     <Content Include="Content\img\icon\phone-icon.png" />
     <Content Include="Content\img\icon\telephone-icon.png" />
     <Content Include="Content\img\icon\user-icon.png" />
+    <Content Include="Content\img\icon\wallet-icon.png" />
     <Content Include="Content\img\icon\website-icon.png" />
     <Content Include="Content\img\icon\shopping-icon.png" />
     <Content Include="Content\img\icon\text-icon.png" />
@@ -244,10 +246,13 @@
     <Content Include="Scripts\js\popper-utils.js.map" />
     <Content Include="Scripts\js\jquery-3.5.1.slim.min.map" />
     <Content Include="Scripts\js\jquery-3.5.1.min.map" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Tanitim.cshtml" />
     <Content Include="Views\Home\KayitOl.cshtml" />
     <Content Include="Views\Shared\_Layout1.cshtml" />
-    <Content Include="Views\Kuafor\Index.cshtml" />
+    <Content Include="Views\Kuafor\HizmetYonetimi.cshtml" />
+    <Content Include="Views\Kuafor\OdemeAyarlari.cshtml" />
+    <Content Include="Views\Kuafor\OnOdemeIsteme.cshtml" />
+    <Content Include="Views\Kuafor\OnOdemeTalepEt.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

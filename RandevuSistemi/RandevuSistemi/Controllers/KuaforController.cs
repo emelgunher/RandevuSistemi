@@ -9,9 +9,26 @@ namespace RandevuSistemi.Controllers
     public class KuaforController : Controller
     {
         // GET: Kuafor
-        public ActionResult Index()
+        public ActionResult HizmetYonetimi()
         {
             return View();
         }
+
+        public ActionResult OdemeAyarlari()
+        {
+            return View();
+        }
+
+        public ActionResult OnOdemeIsteme()
+        {
+            return View();
+        }
+
+        public ActionResult OnOdemeTalepEt()
+        {
+            return View();
+        }
+
+
     }
 }

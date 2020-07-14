@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "OnOdemeTalepEt";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<div>
+
+    <ul class="nav justify-content-center">
+
+        <li class="nav-item">
+            <a class="nav-link button-odeme" href="/Kuafor/OnOdemeIsteme">Ön Ödeme İsteme</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link button-odeme" href="/Kuafor/OnOdemeTalepEt">Ön Ödeme Talep Et</a>
+        </li>
+
+    </ul>
+
+</div>
+
+<div style="margin-top:40px;">
+
+    <div class="input-container">
+        <img class="icon" style="margin-left:70px;" src="~/Content/img/icon/wallet-icon.png" />
+        <input class="input" type="url" placeholder="IBAN Numarası" name="psw">
+    </div>
+
+    <div class="input-container">
+        <img class="icon" style="margin-left:70px;" src="~/Content/img/icon/user-icon.png" />
+        <input class="input" type="url" placeholder="Hesap Alıcı Adı" name="psw">
+    </div>
+
+    <div class="input-container">
+        <select class="input-field" style="margin-left:80px; margin-right:80px; margin-top:10px;" name="ilce" id="ilce">
+            <option disabled selected style="color:lightgray;"> Ön Ödeme Miktarı </option>
+            <option value="01">Sabit TL belirleyeceğim</option>
+            <option value="02">%25 talep et</option>
+            <option value="03">%50 talep et</option>
+            <option value="04">%100 talep et</option>
+
+        </select>
+    </div>
+
+    <a class="btn btn-primary button-kaydet" href="#" role="button">Değişiklikleri Kaydet</a>
+</div>

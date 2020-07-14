@@ -1,0 +1,27 @@
+﻿.button-odeme {
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: white;
+    color: black;
+    border: 2px solid gray;
+    transition-duration: 0.4s;
+    padding: 11px 60px;
+    border-radius: 4px;
+}
+
+    .button-odeme:hover {
+        border: 2px solid #4CAF50; /*Green*/
+        color: gray;
+    }
+
+    .button-odeme:focus {
+        border: 2px solid #4CAF50; /*Green*/
+        color: gray;
+    }
+
+.button-kaydet {
+    width:210px; 
+    height:50px; 
+    margin-left:263px; 
+    margin-top:20px; 
+}
