@@ -4,99 +4,105 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <form>
+<form>
 
-        <div class="input-container">
-            <img class="icon" src="~/Content/img/icon/user-icon.png" />
-            <input class="input-instagram" type="text" placeholder="Instagram Adresiniz" name="usrnm">
-            <button type="button" class="btn btn-primary buton" style="margin-left:10px;">Veri Çek</button>
+    <div class="input-container">
+        <img class="icon" src="~/Content/img/icon/user-icon.png" />
+        <input class="input-instagram" type="text" placeholder="Instagram Adresiniz" name="usrnm">
+        <button type="button" class="btn btn-primary buton" style="margin-left:10px;">Veri Çek</button>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-md-4 offset-2 ">
+            <a href="#">
+                <img class="icon-camera" src="~/Content/img/icon/camera-icon.png" />
+            </a>
+
         </div>
+        <div class="col-1">
 
-
-        <div class="row">
-
-            <div class="col-md-4 offset-2 ">
-                <a href="#">
-                    <img class="icon-camera" src="~/Content/img/icon/camera-icon.png" />
-                </a>
-
-            </div>
-
-            <div class="col-md-6 input-container">
+            <div class="col-md-5 input-container">
 
                 <img class="icon-company" src="~/Content/img/icon/company-icon.png" />
-                <input class="input-camera" type="text" placeholder="Firma / Kişi Adı" name="usrnm">
+                <input class="input-camera" style="padding-right:100px;" type="text" placeholder="Firma / Kişi Adı" name="usrnm">
 
-                @*<img class="icon-company" src="~/Content/img/icon/company-icon.png" />
-                <input class="input-camera" type="text" placeholder="Username" name="usrnm">*@
+            </div>
+            <div class="col-md-5 input-container">
+
+                <img class="icon-company" src="~/Content/img/icon/comment-icon.png" />
+                <input class="input-camera" style="padding-right:100px;" type="text" placeholder="Açıklama / Slogan" name="usrnm">
 
             </div>
 
         </div>
 
-        <div class="input-container">
-            <select class="input-field" name="meslek" id="meslek">
-                <option disabled selected style="color:lightgray;"> Meslek Grubu </option>
-                <option value="kuafor">Kuaför</option>
-                <option value="gsalonu">Güzellik Salonu</option>
-                <option value="#">...</option>
-                <option value="#">...</option>
+    </div>
 
-            </select>
-        </div>
+    <div class="input-container">
+        <select class="input-field" name="meslek" id="meslek">
+            <option disabled selected style="color:lightgray;"> Meslek Grubu </option>
+            <option value="kuafor">Kuaför</option>
+            <option value="gsalonu">Güzellik Salonu</option>
+            <option value="#">...</option>
+            <option value="#">...</option>
+
+        </select>
+    </div>
 
 
-        <div class="input-container">
-            <select class="input-field" name="sehir" id="sehir">
-                <option disabled selected style="color:lightgray;"> Şehir </option>
-                <option value="01">ADANA</option>
-                <option value="02">ADIYAMAN</option>
-                <option value="03">AFYON</option>
-                <option value="04">AĞRI</option>
+    <div class="input-container">
+        <select class="input-field" name="sehir" id="sehir">
+            <option disabled selected style="color:lightgray;"> Şehir </option>
+            <option value="01">ADANA</option>
+            <option value="02">ADIYAMAN</option>
+            <option value="03">AFYON</option>
+            <option value="04">AĞRI</option>
 
-            </select>
-        </div>
+        </select>
+    </div>
 
-        <div class="input-container">
-            <select class="input-field" name="ilce" id="ilce">
-                <option disabled selected style="color:lightgray;"> İlçe </option>
-                <option value="01"></option>
-                <option value="02"></option>
-                <option value="03"></option>
-                <option value="04"></option>
+    <div class="input-container">
+        <select class="input-field" name="ilce" id="ilce">
+            <option disabled selected style="color:lightgray;"> İlçe </option>
+            <option value="01"></option>
+            <option value="02"></option>
+            <option value="03"></option>
+            <option value="04"></option>
 
-            </select>
-        </div>
+        </select>
+    </div>
 
-        <div class="input-container">
-            <img class="icon" style="margin-left:100px;" src="~/Content/img/icon/website-icon.png" />
-            <input class="input" type="url" placeholder="Web Sayfanız" name="psw">
-        </div>
+    <div class="input-container">
+        <img class="icon" style="margin-left:100px;" src="~/Content/img/icon/website-icon.png" />
+        <input class="input" type="url" placeholder="Web Sayfanız" name="psw">
+    </div>
 
-        <div class="input-container">
-            <img class="icon" style="margin-left:100px;" src="~/Content/img/icon/telephone-icon.png" />
-            <input class="input" type="tel" placeholder="Telefon" name="psw">
-        </div>
+    <div class="input-container">
+        <img class="icon" style="margin-left:100px;" src="~/Content/img/icon/telephone-icon.png" />
+        <input class="input" type="tel" placeholder="Telefon" name="psw">
+    </div>
 
-        <div class="input-container">
-            <img class="icon" style="margin-left:100px;" src="~/Content/img/icon/email-icon.png" />
-            <input class="input" type="email" placeholder="E-mail" name="psw">
-        </div>
+    <div class="input-container">
+        <img class="icon" style="margin-left:100px;" src="~/Content/img/icon/email-icon.png" />
+        <input class="input" type="email" placeholder="E-mail" name="psw">
+    </div>
 
-        <div class="input-container">
-            <img class="icon" style="margin-left:100px;" src="~/Content/img/icon/password-icon.png" />
-            <input class="input" type="password" placeholder="Şifre" name="psw">
-        </div>
+    <div class="input-container">
+        <img class="icon" style="margin-left:100px;" src="~/Content/img/icon/password-icon.png" />
+        <input class="input" type="password" placeholder="Şifre" name="psw">
+    </div>
 
-        <br />
+    <br />
 
-        <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck1">
-            <label class="custom-control-label" for="customCheck1">Üyelik Sözleşmesini kabul ediyorum</label>
-        </div>
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="customCheck1">
+        <label class="custom-control-label" for="customCheck1">Üyelik Sözleşmesini okudum, kabul ediyorum</label>
+    </div>
 
-        <br />
+    <br />
 
-        <a class="btn btn-primary buton" href="#" role="button">Kayıt Ol</a>
+    <a class="btn btn-primary buton" href="#" role="button">Kayıt Ol</a>
 
-    </form>
+</form>

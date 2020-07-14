@@ -98,11 +98,14 @@
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\form.css" />
+    <Content Include="Content\css\hizmet-ekle.css" />
     <Content Include="Content\css\layout.css" />
+    <Content Include="Content\css\layout1.css" />
     <Content Include="Content\img\background\1856252.jpg" />
     <Content Include="Content\img\background\2579635.jpg" />
     <Content Include="Content\img\background\2579724.jpg" />
     <Content Include="Content\img\icon\camera-icon.png" />
+    <Content Include="Content\img\icon\comment-icon.png" />
     <Content Include="Content\img\icon\company-icon.png" />
     <Content Include="Content\img\icon\email-icon.png" />
     <Content Include="Content\img\icon\instagram-icon.png" />
@@ -111,6 +114,9 @@
     <Content Include="Content\img\icon\telephone-icon.png" />
     <Content Include="Content\img\icon\user-icon.png" />
     <Content Include="Content\img\icon\website-icon.png" />
+    <Content Include="Content\img\icon\shopping-icon.png" />
+    <Content Include="Content\img\icon\text-icon.png" />
+    <Content Include="Content\img\sosyalMedya\sosyal-medya.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\js\bootstrap.bundle.js" />
     <Content Include="Scripts\js\bootstrap.bundle.min.js" />
@@ -216,6 +222,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KuaforController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -239,6 +246,8 @@
     <Content Include="Scripts\js\jquery-3.5.1.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\KayitOl.cshtml" />
+    <Content Include="Views\Shared\_Layout1.cshtml" />
+    <Content Include="Views\Kuafor\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

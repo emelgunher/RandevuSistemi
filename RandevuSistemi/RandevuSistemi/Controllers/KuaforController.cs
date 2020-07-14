@@ -6,18 +6,12 @@ using System.Web.Mvc;
 
 namespace RandevuSistemi.Controllers
 {
-    public class HomeController : Controller
+    public class KuaforController : Controller
     {
-        // GET: Home
+        // GET: Kuafor
         public ActionResult Index()
         {
             return View();
         }
-
-        public ActionResult KayitOl()
-        {
-            return View();
-        }
-
     }
 }

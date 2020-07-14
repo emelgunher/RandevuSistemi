@@ -1,0 +1,151 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+    <div class="row">
+
+        <div class="col-md-4 offset-2">
+            <button class="button-kimizi" type="button"> Randevu Talepleri (0 Tane) </button>
+        </div>
+
+        <div id="pencerekodu" class="col-md-6">
+
+            <label for="pencere" class="button-mavi">Hizmet Ekle</label>
+
+            <input type="checkbox" class="Pencereac" id="pencere" name="pencere">
+
+            <label class="pencere">
+                Hizmet Ekle
+
+                <div class="input-container" style="margin-top: 20px;">
+                    <img class="icon" src="~/Content/img/icon/text-icon.png" />
+                    <input class="input" type="text" placeholder="Hizmet Adı" name="psw">
+                </div>
+
+                <div class="input-container">
+                    <img class="icon" src="~/Content/img/icon/shopping-icon.png" />
+                    <input class="input" type="number" placeholder="Fiyatı" name="psw">
+                </div>
+
+                <label for="pencere" class="button-mavi" style="background-color:purple; position:relative; left:250px;" name="Hizmeti Ekle">Hizmeti Ekle</label>
+            </label>
+        </div>
+
+        @*<div class="col-md-6">
+            <button class="button-mavi" type="button" for onclick="HizmetEkle()"> Hizmet Ekle </button>
+        </div>*@
+
+    </div>
+
+<div style="margin-top:40px;">
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Hizmet Adı</th>
+                <th scope="col">Fiyatı</th>
+                <th scope="col">İşlem</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Fön</td>
+                <td>50</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Boya</td>
+                <td>100</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Manikür</td>
+                <td>100</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+
+
+
+
+@*<div id="pencerekodu">
+    <label for="pencere" class="button-mavi">Pencereyi Aç</label>
+    <input type="checkbox" class="Pencereac" id="pencere" name="pencere"></input>
+    <label class="pencere">Pencere İçeriğini Bu Alana Yazabilirsiniz.
+            <label for="pencere" class="dugme" name="kapat">Kapat</label>
+    </label>
+</div>*@
+
+
+
+
+
+
+
+
+
+
+
+@*<script style="background-color:white;" type="text/javascript">
+    function bilgiIstemi() {
+        var isim = prompt("Lütfen isminizi girin", "İsim");
+        document.getElementById("msg").innerHTML = "Merhaba " + isim;
+    }
+</script>
+
+    <input type="button" onclick="bilgiIstemi()" value="İsim girmek için tıklayın.">
+    <br><br>
+    <div id="msg"> </div>
+
+
+    <script>
+        function HizmetEkle() {
+            window.alert("bjnkmlöşçi");
+
+            //<div style="margin-top:40px;">
+
+            //    <table class="table table-striped">
+            //        <thead>
+            //            <tr>
+            //                <th scope="col">#</th>
+            //                <th scope="col">Hizmet Adı</th>
+            //                <th scope="col">Fiyatı</th>
+            //                <th scope="col">İşlem</th>
+            //            </tr>
+            //        </thead>
+            //        <tbody>
+            //            <tr>
+            //                <th scope="row">1</th>
+            //                <td>Mark</td>
+            //                <td>Otto</td>
+            //                <td></td>
+            //            </tr>
+            //            <tr>
+            //                <th scope="row">2</th>
+            //                <td>Jacob</td>
+            //                <td>Thornton</td>
+            //                <td></td>
+            //            </tr>
+            //            <tr>
+            //                <th scope="row">3</th>
+            //                <td>Larry</td>
+            //                <td>the Bird</td>
+            //                <td></td>
+            //            </tr>
+            //        </tbody>
+            //    </table>
+
+            //</div>
+
+        }
+    </script>*@

@@ -8,14 +8,65 @@
     <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/css/layout.css" rel="stylesheet" />
     <link href="~/Content/css/form.css" rel="stylesheet" />
+    <link href="~/Content/css/layout1.css" rel="stylesheet" />
+    <link href="~/Content/css/hizmet-ekle.css" rel="stylesheet" />
 
 </head>
+
 <body class="body">
+
     <div class="container bosluk">
         <div class="col-md-8 col-md offset-2 header">
             <div class="text-center" style="padding-top:15px; padding-bottom:20px;">
                 <h2>   Kuaför Randevu Sistemi </h2>
-                <p>Sisteme kayıt olabilir, kaydınız varsa giriş yapabilirsiniz.</p>
+                <p>Kullanıcı Adı</p>
+            </div>
+
+            <div class="row">
+
+                @*<div class="col-md-6">
+            <button class="button-mor" type="button"> Sosyal Medya Görseli </button>
+        </div>*@
+
+                <div id="pencerekodu" class="col-md-6">
+
+                    <label for="pencere1" class="button-mor">Sosyal Medya Görseli</label>
+
+                    <input type="checkbox" class="Pencereac1" id="pencere1" name="pencere1">
+
+                    <label class="pencere1 scroll">
+
+                        <a href="/Kuafor/Index" style="position:relative; left:430px;" aria-label="Close Account Info Modal Box">&times</a>
+
+                        <div class="input-container">
+                            <img class="sosyal-medya" src="~/Content/img/sosyalMedya/sosyal-medya.jpg" />
+                        </div>
+                    </label>
+                </div>
+
+
+                @*<div class="col-md-6">
+            <button class="button-mor" type="button"> Müşteri Randevu Linki </button>
+        </div>*@
+
+                <div id="pencerekodu" class="col-md-6">
+
+                    <label for="pencere2" class="button-mor">Müşteri Randevu Linki</label>
+
+                    <input type="checkbox" class="Pencereac2" id="pencere2" name="pencere">
+
+                    <label class="pencere2">
+                        Müşteri Randevu Linki
+                        <hr />
+
+                        <p style="text-align:center;">
+                            https://localhost:44348/Kuafor/Index
+                        </p>
+
+                        <label for="pencere2" class="button-mavi" style="position:relative; left:300px;">Kapat</label>
+                    </label>
+                </div>
+
             </div>
 
             @*header*@
@@ -27,16 +78,16 @@
                             <button class="button" type="button">Giriş Yap</button>
                         </form>
                     </nav>*@
-
                 <ul class="nav justify-content-center">
+
                     <li class="nav-item">
-                        <a class="nav-link button" href="/Home/Index">Tanıtım</a>
+                        <a class="nav-link button1" href="/Kuafor/Index">Hizmet Yönetimi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link button" href="/Home/KayitOl">Kayıt Ol</a>
+                        <a class="nav-link button1" href="/Home/KayitOl">Ödeme Ayarları</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link button" href="#">Giriş Yap</a>
+                        <a class="nav-link button1" href="#">Profil</a>
                     </li>
 
                 </ul>
