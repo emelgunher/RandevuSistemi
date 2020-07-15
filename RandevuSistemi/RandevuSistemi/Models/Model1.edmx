@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="randevuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="FIRMACALISANLARI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ADISOYADI" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="KAYITTARIHI" Type="datetime" Nullable="false" />
+          <Property Name="FIRMAID" Type="int" Nullable="false" />
+          <Property Name="STATUS" Type="bit" Nullable="false" />
+          <Property Name="HIZMETLER" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="FIRMALAR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GUID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ADI" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="INSTAGRAM" Type="nvarchar" MaxLength="255" />
+          <Property Name="MESLEK_GRUBU" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="IL" Type="nvarchar" MaxLength="255" />
+          <Property Name="ILCE" Type="nvarchar" MaxLength="255" />
+          <Property Name="TELEFON" Type="nvarchar" MaxLength="255" />
+          <Property Name="EPOSTA" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="SIFRE" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="STATUS" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HIZMETLER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ADI" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="FIYAT" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="KAYITTARIHI" Type="datetime" Nullable="false" />
+          <Property Name="FIRMAID" Type="int" Nullable="false" />
+          <Property Name="STATUS" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RANDEVUDETAY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KAYITTARIHI" Type="datetime" Nullable="false" />
+          <Property Name="STATUS" Type="bit" Nullable="false" />
+          <Property Name="HIZMETID" Type="int" />
+        </EntityType>
+        <EntityType Name="RANDEVULER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ADISOYADI" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="KAYITTARIHI" Type="datetime" Nullable="false" />
+          <Property Name="FIRMAID" Type="int" Nullable="false" />
+          <Property Name="STATUS" Type="bit" Nullable="false" />
+          <Property Name="TELEFON" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="RANDEVUONAY" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__HIZMETLER__FIRMA__1A14E395">
+          <End Role="FIRMALAR" Type="Self.FIRMALAR" Multiplicity="1" />
+          <End Role="HIZMETLER" Type="Self.HIZMETLER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FIRMALAR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HIZMETLER">
+              <PropertyRef Name="FIRMAID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HIZMETLER__FIRMA__2A4B4B5E">
+          <End Role="FIRMALAR" Type="Self.FIRMALAR" Multiplicity="1" />
+          <End Role="FIRMACALISANLARI" Type="Self.FIRMACALISANLARI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FIRMALAR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FIRMACALISANLARI">
+              <PropertyRef Name="FIRMAID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HIZMETLER__FIRMA__2E1BDC42">
+          <End Role="FIRMALAR" Type="Self.FIRMALAR" Multiplicity="1" />
+          <End Role="RANDEVULER" Type="Self.RANDEVULER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FIRMALAR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RANDEVULER">
+              <PropertyRef Name="FIRMAID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RANDEVUDE__HIZME__34C8D9D1">
+          <End Role="HIZMETLER" Type="Self.HIZMETLER" Multiplicity="0..1" />
+          <End Role="RANDEVUDETAY" Type="Self.RANDEVUDETAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HIZMETLER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RANDEVUDETAY">
+              <PropertyRef Name="HIZMETID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="randevuModelStoreContainer">
+          <EntitySet Name="FIRMACALISANLARI" EntityType="Self.FIRMACALISANLARI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FIRMALAR" EntityType="Self.FIRMALAR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HIZMETLER" EntityType="Self.HIZMETLER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RANDEVUDETAY" EntityType="Self.RANDEVUDETAY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RANDEVULER" EntityType="Self.RANDEVULER" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__HIZMETLER__FIRMA__1A14E395" Association="Self.FK__HIZMETLER__FIRMA__1A14E395">
+            <End Role="FIRMALAR" EntitySet="FIRMALAR" />
+            <End Role="HIZMETLER" EntitySet="HIZMETLER" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HIZMETLER__FIRMA__2A4B4B5E" Association="Self.FK__HIZMETLER__FIRMA__2A4B4B5E">
+            <End Role="FIRMALAR" EntitySet="FIRMALAR" />
+            <End Role="FIRMACALISANLARI" EntitySet="FIRMACALISANLARI" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HIZMETLER__FIRMA__2E1BDC42" Association="Self.FK__HIZMETLER__FIRMA__2E1BDC42">
+            <End Role="FIRMALAR" EntitySet="FIRMALAR" />
+            <End Role="RANDEVULER" EntitySet="RANDEVULER" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RANDEVUDE__HIZME__34C8D9D1" Association="Self.FK__RANDEVUDE__HIZME__34C8D9D1">
+            <End Role="HIZMETLER" EntitySet="HIZMETLER" />
+            <End Role="RANDEVUDETAY" EntitySet="RANDEVUDETAY" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="randevuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="FIRMACALISANLARI">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ADISOYADI" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KAYITTARIHI" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FIRMAID" Type="Int32" Nullable="false" />
+          <Property Name="STATUS" Type="Boolean" Nullable="false" />
+          <Property Name="HIZMETLER" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FIRMALAR" Relationship="Self.FK__HIZMETLER__FIRMA__2A4B4B5E" FromRole="FIRMACALISANLARI" ToRole="FIRMALAR" />
+        </EntityType>
+        <EntityType Name="FIRMALAR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GUID" Type="Guid" Nullable="false" />
+          <Property Name="ADI" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="INSTAGRAM" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MESLEK_GRUBU" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ILCE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TELEFON" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EPOSTA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SIFRE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="STATUS" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="FIRMACALISANLARIs" Relationship="Self.FK__HIZMETLER__FIRMA__2A4B4B5E" FromRole="FIRMALAR" ToRole="FIRMACALISANLARI" />
+          <NavigationProperty Name="HIZMETLERs" Relationship="Self.FK__HIZMETLER__FIRMA__1A14E395" FromRole="FIRMALAR" ToRole="HIZMETLER" />
+          <NavigationProperty Name="RANDEVULERs" Relationship="Self.FK__HIZMETLER__FIRMA__2E1BDC42" FromRole="FIRMALAR" ToRole="RANDEVULER" />
+        </EntityType>
+        <EntityType Name="HIZMETLER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ADI" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FIYAT" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="KAYITTARIHI" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FIRMAID" Type="Int32" Nullable="false" />
+          <Property Name="STATUS" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="FIRMALAR" Relationship="Self.FK__HIZMETLER__FIRMA__1A14E395" FromRole="HIZMETLER" ToRole="FIRMALAR" />
+          <NavigationProperty Name="RANDEVUDETAYs" Relationship="Self.FK__RANDEVUDE__HIZME__34C8D9D1" FromRole="HIZMETLER" ToRole="RANDEVUDETAY" />
+        </EntityType>
+        <EntityType Name="RANDEVUDETAY">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KAYITTARIHI" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="STATUS" Type="Boolean" Nullable="false" />
+          <Property Name="HIZMETID" Type="Int32" />
+          <NavigationProperty Name="HIZMETLER" Relationship="Self.FK__RANDEVUDE__HIZME__34C8D9D1" FromRole="RANDEVUDETAY" ToRole="HIZMETLER" />
+        </EntityType>
+        <EntityType Name="RANDEVULER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ADISOYADI" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="KAYITTARIHI" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FIRMAID" Type="Int32" Nullable="false" />
+          <Property Name="STATUS" Type="Boolean" Nullable="false" />
+          <Property Name="TELEFON" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RANDEVUONAY" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="FIRMALAR" Relationship="Self.FK__HIZMETLER__FIRMA__2E1BDC42" FromRole="RANDEVULER" ToRole="FIRMALAR" />
+        </EntityType>
+        <Association Name="FK__HIZMETLER__FIRMA__2A4B4B5E">
+          <End Role="FIRMALAR" Type="Self.FIRMALAR" Multiplicity="1" />
+          <End Role="FIRMACALISANLARI" Type="Self.FIRMACALISANLARI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FIRMALAR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="FIRMACALISANLARI">
+              <PropertyRef Name="FIRMAID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HIZMETLER__FIRMA__1A14E395">
+          <End Role="FIRMALAR" Type="Self.FIRMALAR" Multiplicity="1" />
+          <End Role="HIZMETLER" Type="Self.HIZMETLER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FIRMALAR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="HIZMETLER">
+              <PropertyRef Name="FIRMAID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HIZMETLER__FIRMA__2E1BDC42">
+          <End Role="FIRMALAR" Type="Self.FIRMALAR" Multiplicity="1" />
+          <End Role="RANDEVULER" Type="Self.RANDEVULER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FIRMALAR">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RANDEVULER">
+              <PropertyRef Name="FIRMAID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RANDEVUDE__HIZME__34C8D9D1">
+          <End Role="HIZMETLER" Type="Self.HIZMETLER" Multiplicity="0..1" />
+          <End Role="RANDEVUDETAY" Type="Self.RANDEVUDETAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HIZMETLER">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="RANDEVUDETAY">
+              <PropertyRef Name="HIZMETID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="randevuEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FIRMACALISANLARIs" EntityType="Self.FIRMACALISANLARI" />
+          <EntitySet Name="FIRMALARs" EntityType="Self.FIRMALAR" />
+          <EntitySet Name="HIZMETLERs" EntityType="Self.HIZMETLER" />
+          <EntitySet Name="RANDEVUDETAYs" EntityType="Self.RANDEVUDETAY" />
+          <EntitySet Name="RANDEVULERs" EntityType="Self.RANDEVULER" />
+          <AssociationSet Name="FK__HIZMETLER__FIRMA__2A4B4B5E" Association="Self.FK__HIZMETLER__FIRMA__2A4B4B5E">
+            <End Role="FIRMALAR" EntitySet="FIRMALARs" />
+            <End Role="FIRMACALISANLARI" EntitySet="FIRMACALISANLARIs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HIZMETLER__FIRMA__1A14E395" Association="Self.FK__HIZMETLER__FIRMA__1A14E395">
+            <End Role="FIRMALAR" EntitySet="FIRMALARs" />
+            <End Role="HIZMETLER" EntitySet="HIZMETLERs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HIZMETLER__FIRMA__2E1BDC42" Association="Self.FK__HIZMETLER__FIRMA__2E1BDC42">
+            <End Role="FIRMALAR" EntitySet="FIRMALARs" />
+            <End Role="RANDEVULER" EntitySet="RANDEVULERs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RANDEVUDE__HIZME__34C8D9D1" Association="Self.FK__RANDEVUDE__HIZME__34C8D9D1">
+            <End Role="HIZMETLER" EntitySet="HIZMETLERs" />
+            <End Role="RANDEVUDETAY" EntitySet="RANDEVUDETAYs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="randevuModelStoreContainer" CdmEntityContainer="randevuEntities1">
+          <EntitySetMapping Name="FIRMACALISANLARIs">
+            <EntityTypeMapping TypeName="randevuModel.FIRMACALISANLARI">
+              <MappingFragment StoreEntitySet="FIRMACALISANLARI">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ADISOYADI" ColumnName="ADISOYADI" />
+                <ScalarProperty Name="KAYITTARIHI" ColumnName="KAYITTARIHI" />
+                <ScalarProperty Name="FIRMAID" ColumnName="FIRMAID" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="HIZMETLER" ColumnName="HIZMETLER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FIRMALARs">
+            <EntityTypeMapping TypeName="randevuModel.FIRMALAR">
+              <MappingFragment StoreEntitySet="FIRMALAR">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GUID" ColumnName="GUID" />
+                <ScalarProperty Name="ADI" ColumnName="ADI" />
+                <ScalarProperty Name="INSTAGRAM" ColumnName="INSTAGRAM" />
+                <ScalarProperty Name="MESLEK_GRUBU" ColumnName="MESLEK_GRUBU" />
+                <ScalarProperty Name="IL" ColumnName="IL" />
+                <ScalarProperty Name="ILCE" ColumnName="ILCE" />
+                <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+                <ScalarProperty Name="EPOSTA" ColumnName="EPOSTA" />
+                <ScalarProperty Name="SIFRE" ColumnName="SIFRE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HIZMETLERs">
+            <EntityTypeMapping TypeName="randevuModel.HIZMETLER">
+              <MappingFragment StoreEntitySet="HIZMETLER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ADI" ColumnName="ADI" />
+                <ScalarProperty Name="FIYAT" ColumnName="FIYAT" />
+                <ScalarProperty Name="KAYITTARIHI" ColumnName="KAYITTARIHI" />
+                <ScalarProperty Name="FIRMAID" ColumnName="FIRMAID" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RANDEVUDETAYs">
+            <EntityTypeMapping TypeName="randevuModel.RANDEVUDETAY">
+              <MappingFragment StoreEntitySet="RANDEVUDETAY">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="KAYITTARIHI" ColumnName="KAYITTARIHI" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="HIZMETID" ColumnName="HIZMETID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RANDEVULERs">
+            <EntityTypeMapping TypeName="randevuModel.RANDEVULER">
+              <MappingFragment StoreEntitySet="RANDEVULER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ADISOYADI" ColumnName="ADISOYADI" />
+                <ScalarProperty Name="KAYITTARIHI" ColumnName="KAYITTARIHI" />
+                <ScalarProperty Name="FIRMAID" ColumnName="FIRMAID" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+                <ScalarProperty Name="RANDEVUONAY" ColumnName="RANDEVUONAY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

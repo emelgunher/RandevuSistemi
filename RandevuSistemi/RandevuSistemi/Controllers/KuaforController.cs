@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RandevuSistemi.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace RandevuSistemi.Controllers
 {
     public class KuaforController : Controller
     {
+        randevuEntities1 database = new randevuEntities1();
         // GET: Kuafor
         public ActionResult HizmetYonetimi()
         {

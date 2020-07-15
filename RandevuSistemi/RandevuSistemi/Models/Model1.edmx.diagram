@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="865e226d2f0a46d8bf8e204a30be9cdf" Name="Diagram1">
+        <EntityTypeShape EntityType="randevuModel.FIRMACALISANLARI" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="randevuModel.FIRMALAR" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="randevuModel.HIZMETLER" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="randevuModel.RANDEVUDETAY" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="randevuModel.RANDEVULER" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="randevuModel.FK__HIZMETLER__FIRMA__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="randevuModel.FK__HIZMETLER__FIRMA__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="randevuModel.FK__HIZMETLER__FIRMA__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="randevuModel.FK__RANDEVUDE__HIZME__34C8D9D1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
